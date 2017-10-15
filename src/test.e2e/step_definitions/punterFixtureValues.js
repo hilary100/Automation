@@ -5,6 +5,7 @@
         var q = require('q');
 
         this.Then(/^I get best values of table one$/, function () {
+            var that = this;
             var fixtureOne = this.currentPage.fixtureOne;
             var fixtureTwo = this.currentPage.fixtureTwo;
             var fixtureThree = this.currentPage.fixtureThree;
@@ -24,7 +25,7 @@
 
             fixtureThree.getText().then(function (value) {
                 var fixture3 = value.toString();
-                return console.log('fixture two value is ' + fixture3);
+                return console.log('fixture three value is ' + fixture3);
             });
 
             fixtureOneBest.getText().then(function (value) {
@@ -45,7 +46,7 @@
                 getFixtureOneBestHref().then(function (item) {
                     console.log(item);
                     var str = item;
-                    var res = str.substring(32, 36);
+                    var res = str.substring(29, 33);
                     console.log(res);
                     if (res === "ubet") {
                         console.log('its ubet site');
@@ -53,32 +54,63 @@
                     else if (res === "luxb") {
                         console.log('its luxbet site');
                     }
-                    else if (res === "Ladb") {
+                    else if (res === "ladb") {
                         console.log('its Ladbrokes site');
                     }
-                    else if (res === "Spor") {
+                    else if (res === "spor") {
                         console.log('its Sportsbet site');
                     }
                     else if (res === "will") {
                         console.log('its williamhill site');
                     }
-                    else if (res === "unib") {
+                    else if (res === "Unib") {
                         console.log('its unibet site');
                     }
-                    else if (res === "Book") {
+                    else if (res === "book") {
                         console.log('its Bookmaker site');
                     }
-                    else if (res === "Crow") {
+                    else if (res === "crow") {
                         console.log('its Crownbet site');
                     }
+                    if (item === "https://www.odds.com.au/link/sportsbet/") {
+                        that.currentPage = new that.pageObjectMap['SportBetHome'];
+                        that.currentPage.get();
+                        return that.currentPage.waitForLoaded().then(function () {
+                            console.log("Visited Sportbet")
+                        });
+                    }
+                    if (item === "https://www.odds.com.au/link/unibet/") {
+                        that.currentPage = new that.pageObjectMap['UnibetHome'];
+                        that.currentPage.get();
+                        return that.currentPage.waitForLoaded().then(function () {
+                            console.log("Visited Unibet")
+                        });
+                    }
+                    if (item === "https://www.odds.com.au/link/ubet/") {
+                        that.currentPage = new that.pageObjectMap['UbetHome'];
+                        that.currentPage.get();
+                        return that.currentPage.waitForLoaded().then(function () {
+                            console.log("Visited Ubet")
+                        });
+                    }
+                    if (item === "https://www.odds.com.au/link/ladbrokes/") {
+                        that.currentPage = new that.pageObjectMap['LadbrokesHome'];
+                        that.currentPage.get();
+                        return that.currentPage.waitForLoaded().then(function () {
+                            console.log("Visited Ladbrokes")
+                        });
+                    }
                 });
+                that.currentPage = new that.pageObjectMap['PunterSoccerHome'];
+                that.currentPage.get();
+                return that.currentPage.waitForLoaded();
             }
 
             function test2() {
                 getFixtureTwoBestHref().then(function (item) {
                     console.log(item);
                     var str = item;
-                    var res = str.substring(32, 36);
+                    var res = str.substring(29, 33);
                     console.log(res);
                     if (res === "ubet") {
                         console.log('its ubet site');
@@ -86,24 +118,84 @@
                     else if (res === "luxb") {
                         console.log('its luxbet site');
                     }
-                    else if (res === "Ladb") {
+                    else if (res === "ladb") {
                         console.log('its Ladbrokes site');
                     }
-                    else if (res === "Spor") {
+                    else if (res === "spor") {
                         console.log('its Sportsbet site');
                     }
                     else if (res === "will") {
                         console.log('its williamhill site');
                     }
-                    else if (res === "unib") {
+                    else if (res === "Unib") {
                         console.log('its unibet site');
                     }
-                    else if (res === "Book") {
+                    else if (res === "book") {
                         console.log('its Bookmaker site');
                     }
-                    else if (res === "Crow") {
+                    else if (res === "crow") {
                         console.log('its Crownbet site');
                     }
+                });
+            }
+
+            function test3() {
+                getFixtureThreeBestHref().then(function (item) {
+                    console.log(item);
+                    var str = item;
+                    var res = str.substring(29, 33);
+                    console.log(res);
+                    if (res === "ubet") {
+                        console.log('its ubet site');
+                    }
+                    else if (res === "luxb") {
+                        console.log('its luxbet site');
+                    }
+                    else if (res === "ladb") {
+                        console.log('its Ladbrokes site');
+                    }
+                    else if (res === "spor") {
+                        console.log('its Sportsbet site');
+                    }
+                    else if (res === "will") {
+                        console.log('its williamhill site');
+                    }
+                    else if (res === "Unib") {
+                        console.log('its unibet site');
+                    }
+                    else if (res === "book") {
+                        console.log('its Bookmaker site');
+                    }
+                    else if (res === "crow") {
+                        console.log('its Crownbet site');
+                    }
+                });
+            }
+
+            function getFixtureOneBestValue() {
+                return browser.wait(function () {
+                    return fixtureOneBest.getText().then(function (value) {
+                        return value;
+                    });
+                });
+            }
+
+            // function getFixtureOneBestValue() {
+            //     return fixtureOneBest.getText();
+            // }
+            function getFixtureTwoBestValue() {
+                return browser.wait(function () {
+                    return fixtureTwoBest.getText().then(function (value) {
+                        return value;
+                    });
+                });
+            }
+
+            function getFixtureThreeBestValue() {
+                return browser.wait(function () {
+                    return fixtureThreeBest.getText().then(function (value) {
+                        return value;
+                    });
                 });
             }
 
@@ -123,8 +215,89 @@
                 });
             }
 
+            function getFixtureThreeBestHref() {
+                return browser.wait(function () {
+                    return fixtureThreeBest.getAttribute('href').then(function (value) {
+                        return value;
+                    });
+                });
+            }
+
+            // function testingTesting() {
+            //     var value = "testing this to see";
+            //     return value;
+            // }
+            //
+            // var stillTesting = testingTesting();
+            //
+            // console.log('did it work? ' + stillTesting);
+
+            // calculate percentage
+
+            function getFixtureOneBestCalc() {
+                function testing() {
+                    return getFixtureOneBestValue().then(function (value) {
+                        console.log(value);
+                        var numerator = 1;
+                        var denominator = value;
+                        var investmentAmount = 500;
+                        var result = numerator / denominator;
+                        var invest = investmentAmount * result;
+                        console.log("Result 1 is = " + result.toFixed(2));
+                        console.log("Invest = " + invest.toFixed(2));
+                        return result.toFixed(2);
+                    });
+                }
+
+                function testing2() {
+                    return getFixtureTwoBestValue().then(function (value) {
+                        console.log(value);
+                        var numerator = 1;
+                        var denominator = value;
+                        var investmentAmount = 500;
+                        var result = numerator / denominator;
+                        var invest = investmentAmount * result;
+                        console.log("Result 2 is = " + result.toFixed(2));
+                        // return console.log("Invest = " + invest.toFixed(2));
+                        return result.toFixed(2);
+                    });
+
+                }
+
+                // return getFixtureOneBestValue().then(function (value) {
+                //     console.log(value);
+                //     var numerator = 1;
+                //     var denominator = value;
+                //     var investmentAmount = 500;
+                //     var result = numerator/denominator;
+                //     var invest = investmentAmount * result;
+                //     console.log("Result is = " + result.toFixed(2));
+                //     // return console.log("Invest = " + invest.toFixed(2));
+                //     return result.toFixed(2);
+                // });
+            }
+
+            getFixtureOneBestCalc();
             test1();
             test2();
+            test3();
+
+            // function test1(){
+            //     return 100;
+            // }
+            //
+            // function test2(){
+            //     var somevariable = "globllysetValue";
+            //     var returnValue = test1();
+            //     var test = 100;
+            //     var result = returnValue + test
+            //     // some code and work according to the value in returnValue
+            //     alert(result);
+            // }
+
+            // test2();
+
+            // calculatePercentage();
         });
     };
 }).call(this);

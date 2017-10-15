@@ -8,4 +8,4 @@ Feature: Check for odds comparison
 #    Then  I should be on the "PunterOddsComparison" page
 #    And   I scroll to the "soccerItemLink" element
 #    And   I click the "soccerItemLink"
-    And   I wait for 3 seconds
+#    And   I wait for 3 seconds
