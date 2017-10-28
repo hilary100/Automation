@@ -50,54 +50,66 @@
                     console.log(res);
                     if (res === "ubet") {
                         console.log('its ubet site');
-                    }
-                    else if (res === "luxb") {
-                        console.log('its luxbet site');
-                    }
-                    else if (res === "ladb") {
-                        console.log('its Ladbrokes site');
-                    }
-                    else if (res === "spor") {
-                        console.log('its Sportsbet site');
-                    }
-                    else if (res === "will") {
-                        console.log('its williamhill site');
-                    }
-                    else if (res === "Unib") {
-                        console.log('its unibet site');
-                    }
-                    else if (res === "book") {
-                        console.log('its Bookmaker site');
-                    }
-                    else if (res === "crow") {
-                        console.log('its Crownbet site');
-                    }
-                    if (item === "https://www.odds.com.au/link/sportsbet/") {
-                        that.currentPage = new that.pageObjectMap['SportBetHome'];
-                        that.currentPage.get();
-                        return that.currentPage.waitForLoaded().then(function () {
-                            console.log("Visited Sportbet")
-                        });
-                    }
-                    if (item === "https://www.odds.com.au/link/unibet/") {
-                        that.currentPage = new that.pageObjectMap['UnibetHome'];
-                        that.currentPage.get();
-                        return that.currentPage.waitForLoaded().then(function () {
-                            console.log("Visited Unibet")
-                        });
-                    }
-                    if (item === "https://www.odds.com.au/link/ubet/") {
                         that.currentPage = new that.pageObjectMap['UbetHome'];
                         that.currentPage.get();
                         return that.currentPage.waitForLoaded().then(function () {
                             console.log("Visited Ubet")
                         });
                     }
-                    if (item === "https://www.odds.com.au/link/ladbrokes/") {
+                    else if (res === "luxb") {
+                        console.log('its luxbet site');
+                        that.currentPage = new that.pageObjectMap['LuxbetHome'];
+                        that.currentPage.get();
+                        return that.currentPage.waitForLoaded().then(function () {
+                            console.log("Visited Luxbet")
+                        });
+                    }
+                    else if (res === "ladb") {
+                        console.log('its Ladbrokes site');
                         that.currentPage = new that.pageObjectMap['LadbrokesHome'];
                         that.currentPage.get();
                         return that.currentPage.waitForLoaded().then(function () {
                             console.log("Visited Ladbrokes")
+                        });
+                    }
+                    else if (res === "spor") {
+                        console.log('its Sportsbet site');
+                        that.currentPage = new that.pageObjectMap['SportBetHome'];
+                        that.currentPage.get();
+                        return that.currentPage.waitForLoaded().then(function () {
+                            console.log("Visited SportBet")
+                        });
+                    }
+                    else if (res === "will") {
+                        console.log('its williamhill site');
+                        that.currentPage = new that.pageObjectMap['WilliamHillHome'];
+                        that.currentPage.get();
+                        return that.currentPage.waitForLoaded().then(function () {
+                            console.log("Visited williamhill")
+                        });
+                    }
+                    else if (res === "unib") {
+                        console.log('its unibet site');
+                        that.currentPage = new that.pageObjectMap['UnibetHome'];
+                        that.currentPage.get();
+                        return that.currentPage.waitForLoaded().then(function () {
+                            console.log("Visited Unibet")
+                        });
+                    }
+                    else if (res === "book") {
+                        console.log('its Bookmaker site');
+                        that.currentPage = new that.pageObjectMap['BookmakerHome'];
+                        that.currentPage.get();
+                        return that.currentPage.waitForLoaded().then(function () {
+                            console.log("Visited Bookmaker")
+                        });
+                    }
+                    else if (res === "crow") {
+                        console.log('its Crownbet site');
+                        that.currentPage = new that.pageObjectMap['CrownbetHome'];
+                        that.currentPage.get();
+                        return that.currentPage.waitForLoaded().then(function () {
+                            console.log("Visited Crownbet")
                         });
                     }
                 });
@@ -114,29 +126,72 @@
                     console.log(res);
                     if (res === "ubet") {
                         console.log('its ubet site');
+                        that.currentPage = new that.pageObjectMap['UbetHome'];
+                        that.currentPage.get();
+                        return that.currentPage.waitForLoaded().then(function () {
+                            console.log("Visited Ubet")
+                        });
                     }
                     else if (res === "luxb") {
                         console.log('its luxbet site');
+                        that.currentPage = new that.pageObjectMap['LuxbetHome'];
+                        that.currentPage.get();
+                        return that.currentPage.waitForLoaded().then(function () {
+                            console.log("Visited Luxbet")
+                        });
                     }
                     else if (res === "ladb") {
                         console.log('its Ladbrokes site');
+                        that.currentPage = new that.pageObjectMap['LadbrokesHome'];
+                        that.currentPage.get();
+                        return that.currentPage.waitForLoaded().then(function () {
+                            console.log("Visited Ladbrokes")
+                        });
                     }
                     else if (res === "spor") {
                         console.log('its Sportsbet site');
+                        that.currentPage = new that.pageObjectMap['SportBetHome'];
+                        that.currentPage.get();
+                        return that.currentPage.waitForLoaded().then(function () {
+                            console.log("Visited SportBet")
+                        });
                     }
                     else if (res === "will") {
                         console.log('its williamhill site');
+                        that.currentPage = new that.pageObjectMap['WilliamHillHome'];
+                        that.currentPage.get();
+                        return that.currentPage.waitForLoaded().then(function () {
+                            console.log("Visited WilliamHill")
+                        });
                     }
-                    else if (res === "Unib") {
+                    else if (res === "unib") {
                         console.log('its unibet site');
+                        that.currentPage = new that.pageObjectMap['UnibetHome'];
+                        that.currentPage.get();
+                        return that.currentPage.waitForLoaded().then(function () {
+                            console.log("Visited Unibet")
+                        });
                     }
                     else if (res === "book") {
                         console.log('its Bookmaker site');
+                        that.currentPage = new that.pageObjectMap['BookmakerHome'];
+                        that.currentPage.get();
+                        return that.currentPage.waitForLoaded().then(function () {
+                            console.log("Visited Bookmaker")
+                        });
                     }
                     else if (res === "crow") {
                         console.log('its Crownbet site');
+                        that.currentPage = new that.pageObjectMap['CrownbetHome'];
+                        that.currentPage.get();
+                        return that.currentPage.waitForLoaded().then(function () {
+                            console.log("Visited Crownbet")
+                        });
                     }
                 });
+                that.currentPage = new that.pageObjectMap['PunterSoccerHome'];
+                that.currentPage.get();
+                return that.currentPage.waitForLoaded();
             }
 
             function test3() {
@@ -147,29 +202,72 @@
                     console.log(res);
                     if (res === "ubet") {
                         console.log('its ubet site');
+                        that.currentPage = new that.pageObjectMap['UbetHome'];
+                        that.currentPage.get();
+                        return that.currentPage.waitForLoaded().then(function () {
+                            console.log("Visited Ubet")
+                        });
                     }
                     else if (res === "luxb") {
                         console.log('its luxbet site');
+                        that.currentPage = new that.pageObjectMap['LuxbetHome'];
+                        that.currentPage.get();
+                        return that.currentPage.waitForLoaded().then(function () {
+                            console.log("Visited Luxbet")
+                        });
                     }
                     else if (res === "ladb") {
                         console.log('its Ladbrokes site');
+                        that.currentPage = new that.pageObjectMap['LadbrokesHome'];
+                        that.currentPage.get();
+                        return that.currentPage.waitForLoaded().then(function () {
+                            console.log("Visited Ladbrokes")
+                        });
                     }
                     else if (res === "spor") {
                         console.log('its Sportsbet site');
+                        that.currentPage = new that.pageObjectMap['SportBetHome'];
+                        that.currentPage.get();
+                        return that.currentPage.waitForLoaded().then(function () {
+                            console.log("Visited SportBet")
+                        });
                     }
                     else if (res === "will") {
                         console.log('its williamhill site');
+                        that.currentPage = new that.pageObjectMap['WilliamHillHome'];
+                        that.currentPage.get();
+                        return that.currentPage.waitForLoaded().then(function () {
+                            console.log("Visited WilliamHill")
+                        });
                     }
-                    else if (res === "Unib") {
+                    else if (res === "unib") {
                         console.log('its unibet site');
+                        that.currentPage = new that.pageObjectMap['UnibetHome'];
+                        that.currentPage.get();
+                        return that.currentPage.waitForLoaded().then(function () {
+                            console.log("Visited Unibet")
+                        });
                     }
                     else if (res === "book") {
                         console.log('its Bookmaker site');
+                        that.currentPage = new that.pageObjectMap['BookmakerHome'];
+                        that.currentPage.get();
+                        return that.currentPage.waitForLoaded().then(function () {
+                            console.log("Visited Bookmaker")
+                        });
                     }
                     else if (res === "crow") {
                         console.log('its Crownbet site');
+                        that.currentPage = new that.pageObjectMap['CrownbetHome'];
+                        that.currentPage.get();
+                        return that.currentPage.waitForLoaded().then(function () {
+                            console.log("Visited Crownbet")
+                        });
                     }
                 });
+                that.currentPage = new that.pageObjectMap['PunterSoccerHome'];
+                that.currentPage.get();
+                return that.currentPage.waitForLoaded();
             }
 
             function getFixtureOneBestValue() {

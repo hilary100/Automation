@@ -3,7 +3,7 @@ var config = require('cukefarm').config;
 config.specs = 'src/test.e2e/features/**/*.feature';
 config.capabilities.browserName = 'chrome';
 config.capabilities.chromeOptions = {args: [
-    "show-fps-counter=true",
+    // "show-fps-counter=true",
     "--disable-infobars",
     "--disable-gpu"
 ]};
